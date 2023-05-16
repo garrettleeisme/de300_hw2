@@ -10,7 +10,7 @@ docker run -v "$(pwd)/data":/tmp/data hw2:0.2
 2 - To add weather conditions for the pickup times, I assumed that the weather does not change from the previous top of the hour (e.g., weather at 12:59pm will follow the weather listed for 12pm).
 
 3a - If I look at the WSSSE visualization to use the elbow method to find the best k, such value is 5. k=5 yielded a silhouette score of 0.60. 
-![Figure 1](FiguresFromPreviousOutput/k_means.png)
+![Figure 1](FiguresFromPreviousOutput/k_means_graph.png)
 
 3b - The figure representing the clusters is below: 
 ![Figure 2](FiguresFromPreviousOutput/all_clusters.png)
