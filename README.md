@@ -53,7 +53,7 @@ Intra-cluster pickup-dropoff trips:
 ```
 <br>
 Excluding the intra-cluster trips (Zones 0, 2, and 4 are the top three), the trips happening between these three zones seem to take a high proportion. Therefore, we can conclude that trips in Brooklyn and Manhattan dominate. It nmight be interesting to design more clusters and see if this trend can be observed only for the Manhattan island. 
-<br>
+
 ```
 All pickup-dropoff trips: 
 4-4	16926
