@@ -3,8 +3,7 @@
 ### Date: May 17, 2023
 
 ## Commands to Run Docker
-docker build -t project:0.1 . <br>
-docker run -v "$(pwd)/data":/tmp/data project:0.1
+bash run.sh
 
 ## Answers to Questions
 2 - To add weather conditions for the pickup times, I assumed that the weather does not change from the previous top of the hour (e.g., weather at 12:59pm will follow the weather listed for 12pm).
