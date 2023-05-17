@@ -2,7 +2,7 @@
 ### Name: Garrett Lee
 ### Date: May 17, 2023
 
-## Commands to Run Docker
+## Command to Run Docker
 bash run.sh
 
 ## Answers to Questions
