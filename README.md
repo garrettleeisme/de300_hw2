@@ -3,8 +3,8 @@
 ### Date: May 17, 2023
 
 ## Commands to Run Docker
-docker build -t hw2:0.2 . <br>
-docker run -v "$(pwd)/data":/tmp/data hw2:0.2
+docker build -t project:0.1 . <br>
+docker run -v "$(pwd)/data":/tmp/data project:0.1
 
 ## Answers to Questions
 2 - To add weather conditions for the pickup times, I assumed that the weather does not change from the previous top of the hour (e.g., weather at 12:59pm will follow the weather listed for 12pm).
@@ -90,7 +90,8 @@ All pickup-dropoff trips:
 5-ii - By inspecting the graph, We observe a small gradual decrease in the number of trips throughout the month, but that trend is not too obvious.  <br>
 ![Figure 5](FiguresFromPreviousOutput/log_trip_durations_hist.png)
 
-6-i - Longer trips are made mid-week in NYC Taxis. One explanation of this could be that businessman who travel during the week tend to use taxi cabs to avoid transferring since they might be on tight schedules. The weekends, on the other hand, people might have more flexibility to transfer to another mode of transportation or take public transit. <br>
+6-i - On average, we observe longer trips during Wednesday, Thursday, and Friday, as seen by the logarithm of trip length. On the other hand, the trips lengths for Saturday, Sunday, and Monday is less on average. The lower trip lengths on weekends might suggest the claim that people are likely to travel long distances using other modes of transit such as train or bus since they have more time. 
+<br>
 ```
 Statistics for Each Day of the Week Trip Durations:
 Category, Average, Maximum, Minimum, Median, Variance
@@ -104,7 +105,7 @@ Row(day_of_week='Sunday', avg_duration='2.404', max_duration='4.703', min_durati
 ```
 <br>
 
-6-ii - It is clear that there are longer travels made in the taxis than weekends. This may be caused by the rush hour traffic. (Reference: data/log_trip_durations_weekday_or_weekend.png) <br>
+6-ii - There seems to be more spread and higher trip durations on weekdays. This may be caused by the morning and evening rush-hours when many commuters are going to and from their workplace.  <br>
 ```
 Statistics for Weekday or Weekend Trip Durations:
 Category, Average, Maximum, Minimum, Median, Variance
@@ -113,7 +114,7 @@ Row(weekday_or_weekend='Weekend', avg_duration='2.412', max_duration='4.703', mi
 ```
 <br>
 
-6-iii - It is clear that the morning seems to be the time when there are long trips. Again, we will see if the morning rush hour hypothesis is true. (Reference:data/log_trip_durations_parts_of_day.png) <br>
+6-iii - Looking at the outputs, we observe that the afternoon trips tend to take the longest on average and the most variance. This is an interesting finding, since the afternoon trips are between 12-5 PM, which only includes very early evening trips back home. This does not shed much insight to the original intuition that morning rush trips have the longest trips. <br>
 ```
 Statistics for Part of Day Trip Durations:
 Category, Average, Maximum, Minimum, Median, Variance
@@ -124,7 +125,7 @@ Row(part_of_day='Night', avg_duration='2.419', max_duration='4.492', min_duratio
 ``` 
 <br>
 
-6-iv - We finally reach the conclusion that during weekday rush periods (weekday mornings) taxi trips are the longest. This matches with our intuition that cars stuck in morning traffic jams will dominate the average length of trips. (Reference: data/log_trip_durations_weekday_rush.png) <br>
+6-iv - To identify whether morning rush trips take longer, I separated the entries using a binary filter: whether the trip was during the morning rush time or not. The results indicate that longer trips are made during the morning rush, but with only 0.02 logarithm units. <br>
 ```
 Statistics for Weekday Rush or Not Trip Durations:
 Category, Average, Maximum, Minimum, Median, Variance
