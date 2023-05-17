@@ -11,6 +11,7 @@ docker run -v "$(pwd)/data":/tmp/data hw2:0.2
 
 3a - If I look at the WSSSE visualization to use the elbow method to find the best k, such value is 5. The note here is that even though there is a sharp decrease in the WSSSE for k=4, there is substantial decrease of the error gained from k=4 to k=5, which prompted the choice of k for the latter. k=5 yielded a silhouette score of 0.60. <br>
 ![Figure 1](FiguresFromPreviousOutput/k_means_graph.png)
+'''The silhouette score when k=5 is 0.60.'''
 
 3b - The figure representing the clusters is below: <br>
 ![Figure 2](FiguresFromPreviousOutput/all_clusters.png)
