@@ -23,7 +23,7 @@ The LaGuardia cluster has 2122 points.
 The LaGuardia cluster has a variance of  5.01e-06 latitude degrees and  2.06e-05 longitude degrees.
 ```
 <br>
-![Figure 3](FiguresFromPreviousOutput/laguardia_cluster.png)
+![Figure 3](FiguresFromPreviousOutput/laguardia_clusterw.png)
 
 3c-ii - (*Note: I had to filter some points in the cluster out to zoom in to the JFK Airport since some points were too far away from the airport to be considered as originating at the airport*.) By zooming in the trips originating from JFK Airport (approximately 40.63-40.70 north and 73.77-73.825 west), we see a distinct curve line leading to the center of the cluster, which goes along the Van Wyck Expressway leading to the terminals. The expressway leading to the airport goes to the middle of the terminals, where the traffic breaks off to different terminals. Therefore, it is not surprising that (unlike LaGuardia) we see a complete oval shape for pick-up coordinates. The cluster has 1611 pick-up locations, the centroid coordinate of (40.65,-73.79), and the variance of 3.43e-06 latitude degrees and 2.06e-05 longitude degrees. (Reference: output.txt) <br>
 ```
@@ -32,7 +32,7 @@ The JFK cluster has 1530 points.
 The JFK cluster has a variance of  3.43e-06 latitude degrees and  2.06e-05 longitude degrees.
 ``` 
 <br>
-![Figure 4](FiguresFromPreviousOutput/jfk_cluster.png)
+![Figure 4](FiguresFromPreviousOutput/jfk_clusterw.png)
 
 3c-iii - Comparing the two outputs, it is clear that:
 1. There are more taxi trips made in LaGuardia than that of JFK during the same time. This makes sense because JFK has more transit options while LaGuardia does not. 
