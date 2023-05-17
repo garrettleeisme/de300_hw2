@@ -11,25 +11,25 @@ docker run -v "$(pwd)/data":/tmp/data hw2:0.2
 
 3a - If I look at the WSSSE visualization to use the elbow method to find the best k, such value is 5. The note here is that even though there is a sharp decrease in the WSSSE for k=4, there is substantial decrease of the error gained from k=4 to k=5, which prompted the choice of k for the latter. k=5 yielded a silhouette score of 0.60. <br>
 ![Figure 1](FiguresFromPreviousOutput/k_means_graph.png) <br>
-`The silhouette score when k=5 is 0.60.`
+```The silhouette score when k=5 is 0.60.```
 
 3b - The figure representing the clusters is below: <br>
 ![Figure 2](FiguresFromPreviousOutput/all_clusters.png)
 
 3c-i - (*Note: I had to filter some points out to zoom in to the LaGuardia Airport since some points were too far away from the airport to be considered as originating at the airport*.) By zooming in the trips originating from LaGuardia Airport (approximately 40.75-40.78 north and 73.850-73.885 west), we realize that there is a group of trips originating from the Grand Central Parkway (the road right in front of the entrance to the airport). Outside of it, there is also some calls for taxi on 23rd Avenue and 94th Street, the section that intersects Grand Central Parkway. The LaGuardia Airport cluster has 2122 pick-up locations, the centroid coordinate of (40.77, -73.87), and the variance of 5.01e-06 latitude degrees and  2.06e-05 longitude degrees. (Reference: output.txt) <br>
-`
+```
 The centroid of the LaGuardia cluster is ( 40.77,-73.87).
 The LaGuardia cluster has 2122 points.
 The LaGuardia cluster has a variance of  5.01e-06 latitude degrees and  2.06e-05 longitude degrees.
-` <br>
+``` <br>
 ![Figure 3](FiguresFromPreviousOutput/laguardia_cluster.png)
 
 3c-ii - (*Note: I had to filter some points out to zoom in to the JFK Airport since some points were too far away from the airport to be considered as originating at the airport*.) By zooming in the trips originating from JFK Airport (approximately 40.63-40.70 north and 73.77-73.825 west), we see a distinct curve line leading to the center of the cluster, which goes along the Van Wyck Expressway leading to the terminals. The expressway leading to the airport goes to the middle of the terminals, where the traffic breaks off to different terminals. Therefore, it is not surprising that (unlike LaGuardia) we see a complete oval shape for pick-up coordinates. The cluster has 1611 pick-up locations, the centroid coordinate of (40.65,-73.79), and the variance of 3.43e-06 latitude degrees and 2.06e-05 longitude degrees. (Reference: output.txt) <br>
-`
+```
 The centroid of the JFK cluster is ( 40.65,-73.78).
 The JFK cluster has 1530 points.
 The JFK cluster has a variance of  3.43e-06 latitude degrees and  2.06e-05 longitude degrees.
-` <br>
+``` <br>
 ![Figure 4](FiguresFromPreviousOutput/jfk_cluster.png)
 
 3c-iii - Comparing the two outputs, it is clear that:
@@ -37,19 +37,19 @@ The JFK cluster has a variance of  3.43e-06 latitude degrees and  2.06e-05 longi
 2. The variance of the JFK cluster is slightly larger than that of LaGuardia. We could connect this to the fact that JFK has more terminals, leading the trip requests to be more spread out.
  
 3d - The silhouette score for the dropoff coordinates is 0.51. (Reference: output.txt) <br>
-`The silhouette score for the dropoff coordinates is: 0.51.` <br>
+```The silhouette score for the dropoff coordinates is: 0.51.``` <br>
 
 4 - Intra-cluster trips: Zone 4 (lower parts of Midtown and upper parts of Lower Manhattan) seem to have many trips happening within the area. The next cluster that follows is lower Manhattan and lower Brooklyn (Zone 2), which makes sense since there is a lot of activity happening within the area, including the financial area. Interestingly, there does not seem to be many intra-cluster trips on the east side. This might support the hypothesis that most taxi users are using the service to get to Manhattan for commuting. <br>
-`
+```
 Intra-cluster pickup-dropoff trips: 
 4-4	16926
 2-2	11259
 0-0	9738
 3-3	394
 1-1	146
-` <br>
+``` <br>
 Excluding the intra-cluster trips (Zones 0, 2, and 4 are the top three), the trips happening between these three zones seem to take a high proportion. Therefore, we can conclude that trips in Brooklyn and Manhattan dominate. It nmight be interesting to design more clusters and see if this trend can be observed only for the Manhattan island. <br>
-`
+```
 All pickup-dropoff trips: 
 4-4	16926
 2-2	11259
@@ -76,7 +76,7 @@ All pickup-dropoff trips:
 0-1	146
 1-1	146
 3-1	73
-` <br>
+``` <br>
 
 5-i - The distribution of the logarithm of trip durations looks roughly normally distributed, but it seems to be slighly right-tailed. The center seems to be at around 2.5 logarithm units. <br>
 ![Figure 4](FiguresFromPreviousOutput/jfk_cluster.png)
